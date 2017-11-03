@@ -14,6 +14,10 @@
 		8D034B551FAB74D4009CDB11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D034B541FAB74D4009CDB11 /* Assets.xcassets */; };
 		8D034B581FAB74D4009CDB11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D034B561FAB74D4009CDB11 /* LaunchScreen.storyboard */; };
 		8DCB03AD1FAC340B00ED0B84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DCB03AC1FAC340B00ED0B84 /* GoogleService-Info.plist */; };
+		8DCB03B51FAC371400ED0B84 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DCB03B41FAC371400ED0B84 /* Default-568h@2x.png */; };
+		8DCB03B71FACFEC600ED0B84 /* FoodPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03B61FACFEC600ED0B84 /* FoodPreferencesViewController.swift */; };
+		8DCB03B91FAD1B5500ED0B84 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03B81FAD1B5500ED0B84 /* User.swift */; };
+		8DCB03BB1FAD1EF400ED0B84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03BA1FAD1EF400ED0B84 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		8D034B571FAB74D4009CDB11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D034B591FAB74D4009CDB11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DCB03AC1FAC340B00ED0B84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DCB03B41FAC371400ED0B84 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8DCB03B61FACFEC600ED0B84 /* FoodPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPreferencesViewController.swift; sourceTree = "<group>"; };
+		8DCB03B81FAD1B5500ED0B84 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8DCB03BA1FAD1EF400ED0B84 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		931CAD9263A178B7B5508161 /* Pods_Munch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC616F549867CD14B41A3EE4 /* Pods-Munch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Munch/Pods-Munch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +61,7 @@
 		8D034B3E1FAB74D4009CDB11 = {
 			isa = PBXGroup;
 			children = (
+				8DCB03B41FAC371400ED0B84 /* Default-568h@2x.png */,
 				8D034B491FAB74D4009CDB11 /* Munch */,
 				8D034B481FAB74D4009CDB11 /* Products */,
 				B2900D5A6F8B593F2D5CE0AF /* Pods */,
@@ -72,14 +81,65 @@
 			isa = PBXGroup;
 			children = (
 				8D034B4A1FAB74D4009CDB11 /* AppDelegate.swift */,
-				8D034B4E1FAB74D4009CDB11 /* Main.storyboard */,
+				8DCB03BA1FAD1EF400ED0B84 /* Constants.swift */,
+				8DCB03AF1FAC369400ED0B84 /* Controllers */,
+				8DCB03B11FAC36A500ED0B84 /* Models */,
+				8DCB03B01FAC36A000ED0B84 /* Views */,
+				8DCB03B21FAC36AC00ED0B84 /* Services */,
+				8DCB03AE1FAC368800ED0B84 /* Storyboards */,
 				8D034B541FAB74D4009CDB11 /* Assets.xcassets */,
+				8DCB03B31FAC36ED00ED0B84 /* Supporting Files */,
+			);
+			path = Munch;
+			sourceTree = "<group>";
+		};
+		8DCB03AE1FAC368800ED0B84 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8D034B4E1FAB74D4009CDB11 /* Main.storyboard */,
 				8D034B561FAB74D4009CDB11 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8DCB03AF1FAC369400ED0B84 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8DCB03B61FACFEC600ED0B84 /* FoodPreferencesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8DCB03B01FAC36A000ED0B84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8DCB03B11FAC36A500ED0B84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DCB03B81FAD1B5500ED0B84 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8DCB03B21FAC36AC00ED0B84 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8DCB03B31FAC36ED00ED0B84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				8D034B591FAB74D4009CDB11 /* Info.plist */,
 				8DCB03AC1FAC340B00ED0B84 /* GoogleService-Info.plist */,
 				8D034B511FAB74D4009CDB11 /* Munch.xcdatamodeld */,
 			);
-			path = Munch;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B2900D5A6F8B593F2D5CE0AF /* Pods */ = {
@@ -157,6 +217,7 @@
 				8D034B581FAB74D4009CDB11 /* LaunchScreen.storyboard in Resources */,
 				8DCB03AD1FAC340B00ED0B84 /* GoogleService-Info.plist in Resources */,
 				8D034B551FAB74D4009CDB11 /* Assets.xcassets in Resources */,
+				8DCB03B51FAC371400ED0B84 /* Default-568h@2x.png in Resources */,
 				8D034B501FAB74D4009CDB11 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCB03BB1FAD1EF400ED0B84 /* Constants.swift in Sources */,
 				8D034B4B1FAB74D4009CDB11 /* AppDelegate.swift in Sources */,
+				8DCB03B91FAD1B5500ED0B84 /* User.swift in Sources */,
+				8DCB03B71FACFEC600ED0B84 /* FoodPreferencesViewController.swift in Sources */,
 				8D034B531FAB74D4009CDB11 /* Munch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X74LVJ8V7Q;
-				INFOPLIST_FILE = Munch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Munch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.16hchung.Munch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -368,7 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X74LVJ8V7Q;
-				INFOPLIST_FILE = Munch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Munch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.16hchung.Munch;
 				PRODUCT_NAME = "$(TARGET_NAME)";

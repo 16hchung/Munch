@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Nm-pj-Oc7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Food Preferences View Controller-->
+        <scene sceneID="H0j-Xw-H3j">
+            <objects>
+                <viewController id="1Nm-pj-Oc7" customClass="FoodPreferencesViewController" customModule="Munch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IdX-bQ-Ra1"/>
+                        <viewControllerLayoutGuide type="bottom" id="WZ0-2a-OL5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3o2-Yt-gy9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of food would you like to Munch on?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esE-bF-USZ">
+                                <rect key="frame" x="16" y="28" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ObA-3k-wmI">
+                                <rect key="frame" x="16" y="77" width="343" height="570"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodPreferenceCell" editingAccessoryType="checkmark" id="xUb-VN-Qas">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xUb-VN-Qas" id="TnD-R5-bjT">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ObA-3k-wmI" firstAttribute="leading" secondItem="3o2-Yt-gy9" secondAttribute="leading" constant="16" id="5Q1-6Z-rR0"/>
+                            <constraint firstItem="esE-bF-USZ" firstAttribute="top" secondItem="IdX-bQ-Ra1" secondAttribute="bottom" constant="8" id="DeE-WL-ged"/>
+                            <constraint firstItem="WZ0-2a-OL5" firstAttribute="top" secondItem="ObA-3k-wmI" secondAttribute="bottom" constant="20" id="JJH-hD-gWd"/>
+                            <constraint firstItem="ObA-3k-wmI" firstAttribute="top" secondItem="esE-bF-USZ" secondAttribute="bottom" constant="8" id="OUb-uc-pmi"/>
+                            <constraint firstItem="esE-bF-USZ" firstAttribute="centerX" secondItem="3o2-Yt-gy9" secondAttribute="centerX" id="s1K-BR-wEb"/>
+                            <constraint firstItem="esE-bF-USZ" firstAttribute="leading" secondItem="3o2-Yt-gy9" secondAttribute="leading" constant="16" id="uON-7f-yFa"/>
+                            <constraint firstItem="ObA-3k-wmI" firstAttribute="centerX" secondItem="esE-bF-USZ" secondAttribute="centerX" id="xaM-RK-nIa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ObA-3k-wmI" id="eoa-zn-GGY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z4g-Hw-MTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="106.59670164917542"/>
+        </scene>
+    </scenes>
+</document>
