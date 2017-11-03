@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Munch.xcodeproj">
+      location = "group:/Users/hchung/Stanford/ASES_2017/Munch/Munch/Podfile">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
