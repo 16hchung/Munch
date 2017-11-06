@@ -10,9 +10,14 @@ import UIKit
 
 class FoodPreferencesViewController: UIViewController {
 
+    // MARK: - Properties
+    
     @IBOutlet weak var tableView: UITableView!
     
-    let choicesInSections = [FoodPreference.allOnCampusPreferences(), FoodPreference.allOffCampusPreferences()]
+    let optionsInSections = [FoodPreference.allOnCampusPreferences(), FoodPreference.allOffCampusPreferences()]
+    var foodPreferences = Set<FoodPreference>()
+    
+    // MARK: VC Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,23 +25,33 @@ class FoodPreferencesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        switch identifier {
+        case Constants.Segues.FOOD_TO_BUDGET:
+            guard let budgetVC = segue.destination as? BudgetViewController else { return }
+            if let currentUser = User.current {
+                currentUser.foodPreferences = foodPreferences
+            } else {
+                budgetVC.foodPreferences = foodPreferences
+            }
+            break
+        default:
+            break
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Private Helpers
+    
+    private func option(forIndexPath indexPath: IndexPath) -> FoodPreference? {
+        if indexPath.section >= optionsInSections.count { return nil }
+        let optionsForSection = optionsInSections[indexPath.section]
+        if indexPath.row >= optionsForSection.count { return nil }
+        
+        return optionsForSection[indexPath.row]
     }
-    */
-
+    
 }
 
 extension FoodPreferencesViewController: UITableViewDataSource {
@@ -57,8 +72,8 @@ extension FoodPreferencesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section < choicesInSections.count {
-            return choicesInSections[section].count
+        if section < optionsInSections.count {
+            return optionsInSections[section].count
         } else {
             return 0
         }
@@ -67,8 +82,7 @@ extension FoodPreferencesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.FoodPreferences.TABLEVIEW_CELL_ID, for: indexPath)
         
-        let choicesForSection = choicesInSections[indexPath.section]
-        cell.textLabel?.text = choicesForSection[indexPath.row].rawValue.replacingOccurrences(of: "_", with: " ")
+        cell.textLabel?.text = option(forIndexPath: indexPath)?.rawValue.replacingOccurrences(of: "_", with: " ")
         
         return cell
     }
@@ -77,4 +91,22 @@ extension FoodPreferencesViewController: UITableViewDataSource {
 
 extension FoodPreferencesViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath),
+              let option = option(forIndexPath: indexPath) else {
+            return 
+        }
+        switch cell.accessoryType {
+        case .checkmark:
+            cell.accessoryType = .none
+            foodPreferences.remove(option)
+            break
+        case .none:
+            cell.accessoryType = .checkmark
+            foodPreferences.insert(option)
+            break
+        default:
+            break
+        }
+    }
 }

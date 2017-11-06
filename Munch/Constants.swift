@@ -14,4 +14,7 @@ struct Constants {
         static let TABLEVIEW_OFF_CAMPUS_HEADER = "Off Campus"
         static let TABLEVIEW_CELL_ID = "foodPreferenceCell"
     }
+    struct Segues {
+        static let FOOD_TO_BUDGET = "foodToBudget"
+    }
 }

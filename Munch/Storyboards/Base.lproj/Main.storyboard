@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Nm-pj-Oc7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wvw-D0-HNo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Food Preferences View Controller-->
+        <!--Food-->
         <scene sceneID="H0j-Xw-H3j">
             <objects>
                 <viewController id="1Nm-pj-Oc7" customClass="FoodPreferencesViewController" customModule="Munch" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,17 +21,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of food would you like to Munch on?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esE-bF-USZ">
-                                <rect key="frame" x="16" y="28" width="343" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of food do you like?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esE-bF-USZ">
+                                <rect key="frame" x="16" y="72" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-PR-d2p">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="523-9I-4Ab" kind="show" identifier="foodToBudget" id="rXN-cy-e9r"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ObA-3k-wmI">
-                                <rect key="frame" x="16" y="77" width="343" height="570"/>
+                                <rect key="frame" x="16" y="101" width="343" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodPreferenceCell" editingAccessoryType="checkmark" id="xUb-VN-Qas">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="foodPreferenceCell" id="xUb-VN-Qas">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xUb-VN-Qas" id="TnD-R5-bjT">
@@ -46,20 +53,102 @@
                         <constraints>
                             <constraint firstItem="ObA-3k-wmI" firstAttribute="leading" secondItem="3o2-Yt-gy9" secondAttribute="leading" constant="16" id="5Q1-6Z-rR0"/>
                             <constraint firstItem="esE-bF-USZ" firstAttribute="top" secondItem="IdX-bQ-Ra1" secondAttribute="bottom" constant="8" id="DeE-WL-ged"/>
-                            <constraint firstItem="WZ0-2a-OL5" firstAttribute="top" secondItem="ObA-3k-wmI" secondAttribute="bottom" constant="20" id="JJH-hD-gWd"/>
+                            <constraint firstItem="XwE-PR-d2p" firstAttribute="leading" secondItem="3o2-Yt-gy9" secondAttribute="leading" constant="16" id="Kq9-4K-moP"/>
                             <constraint firstItem="ObA-3k-wmI" firstAttribute="top" secondItem="esE-bF-USZ" secondAttribute="bottom" constant="8" id="OUb-uc-pmi"/>
+                            <constraint firstItem="XwE-PR-d2p" firstAttribute="centerX" secondItem="3o2-Yt-gy9" secondAttribute="centerX" id="nSc-lP-Mf4"/>
                             <constraint firstItem="esE-bF-USZ" firstAttribute="centerX" secondItem="3o2-Yt-gy9" secondAttribute="centerX" id="s1K-BR-wEb"/>
                             <constraint firstItem="esE-bF-USZ" firstAttribute="leading" secondItem="3o2-Yt-gy9" secondAttribute="leading" constant="16" id="uON-7f-yFa"/>
+                            <constraint firstItem="WZ0-2a-OL5" firstAttribute="top" secondItem="XwE-PR-d2p" secondAttribute="bottom" constant="20" id="vVc-Vu-yza"/>
+                            <constraint firstItem="XwE-PR-d2p" firstAttribute="top" secondItem="ObA-3k-wmI" secondAttribute="bottom" constant="8" id="wpf-uK-hTX"/>
                             <constraint firstItem="ObA-3k-wmI" firstAttribute="centerX" secondItem="esE-bF-USZ" secondAttribute="centerX" id="xaM-RK-nIa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Food" id="SSD-7W-0L2"/>
                     <connections>
                         <outlet property="tableView" destination="ObA-3k-wmI" id="eoa-zn-GGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4g-Hw-MTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292" y="106.59670164917542"/>
+            <point key="canvasLocation" x="47.200000000000003" y="106.59670164917542"/>
+        </scene>
+        <!--Budget-->
+        <scene sceneID="Wrg-gg-pOt">
+            <objects>
+                <viewController id="523-9I-4Ab" customClass="BudgetViewController" customModule="Munch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HWN-LB-Opb"/>
+                        <viewControllerLayoutGuide type="bottom" id="eJ7-0C-Cft"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iaA-TQ-Bjb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j0W-gg-D1q">
+                                <rect key="frame" x="16" y="101" width="343" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="budgetCell" id="360-6O-h6t">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="360-6O-h6t" id="iGl-za-sRb">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your budget for this Munch?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyA-hA-lis">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lB-tD-aug">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <state key="normal" title="Next"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eJ7-0C-Cft" firstAttribute="top" secondItem="2lB-tD-aug" secondAttribute="bottom" constant="20" id="6dn-VV-8fC"/>
+                            <constraint firstItem="2lB-tD-aug" firstAttribute="top" secondItem="j0W-gg-D1q" secondAttribute="bottom" constant="8" id="9uB-FZ-CfW"/>
+                            <constraint firstItem="2lB-tD-aug" firstAttribute="centerX" secondItem="iaA-TQ-Bjb" secondAttribute="centerX" id="AVW-yX-Eil"/>
+                            <constraint firstItem="DyA-hA-lis" firstAttribute="centerX" secondItem="iaA-TQ-Bjb" secondAttribute="centerX" id="Kg9-z2-PqP"/>
+                            <constraint firstItem="j0W-gg-D1q" firstAttribute="leading" secondItem="iaA-TQ-Bjb" secondAttribute="leading" constant="16" id="anO-To-uXn"/>
+                            <constraint firstItem="j0W-gg-D1q" firstAttribute="top" secondItem="DyA-hA-lis" secondAttribute="bottom" constant="8" id="biw-eS-SSh"/>
+                            <constraint firstItem="DyA-hA-lis" firstAttribute="top" secondItem="HWN-LB-Opb" secondAttribute="bottom" constant="8" id="g4x-GB-K4j"/>
+                            <constraint firstItem="DyA-hA-lis" firstAttribute="leading" secondItem="iaA-TQ-Bjb" secondAttribute="leading" constant="16" id="gOg-qn-d9q"/>
+                            <constraint firstItem="j0W-gg-D1q" firstAttribute="centerX" secondItem="DyA-hA-lis" secondAttribute="centerX" id="tRr-Ea-0vX"/>
+                            <constraint firstItem="2lB-tD-aug" firstAttribute="leading" secondItem="iaA-TQ-Bjb" secondAttribute="leading" constant="16" id="vOa-UU-GSm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Budget" id="CEN-q4-ZFx"/>
+                    <connections>
+                        <outlet property="tableView" destination="j0W-gg-D1q" id="3hm-PK-LoC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0X-GR-Bft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="107"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H5H-6E-1pU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wvw-D0-HNo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BIL-7j-bqL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Nm-pj-Oc7" kind="relationship" relationship="rootViewController" id="5cZ-2Z-qOV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HAc-Hh-gER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-735" y="107"/>
         </scene>
     </scenes>
 </document>

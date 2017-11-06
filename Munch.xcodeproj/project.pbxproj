@@ -18,6 +18,11 @@
 		8DCB03B71FACFEC600ED0B84 /* FoodPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03B61FACFEC600ED0B84 /* FoodPreferencesViewController.swift */; };
 		8DCB03B91FAD1B5500ED0B84 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03B81FAD1B5500ED0B84 /* User.swift */; };
 		8DCB03BB1FAD1EF400ED0B84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03BA1FAD1EF400ED0B84 /* Constants.swift */; };
+		8DCB03BD1FAD39B700ED0B84 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03BC1FAD39B700ED0B84 /* BudgetViewController.swift */; };
+		8DCB03BF1FB0D93D00ED0B84 /* MunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03BE1FB0D93D00ED0B84 /* MunchRequest.swift */; };
+		8DCB03C11FB0EE8500ED0B84 /* FoodPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03C01FB0EE8500ED0B84 /* FoodPreference.swift */; };
+		8DCB03C31FB0EEBE00ED0B84 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03C21FB0EEBE00ED0B84 /* TimePeriod.swift */; };
+		8DCB03C51FB0EF2D00ED0B84 /* Munch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB03C41FB0EF2D00ED0B84 /* Munch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		8DCB03B61FACFEC600ED0B84 /* FoodPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPreferencesViewController.swift; sourceTree = "<group>"; };
 		8DCB03B81FAD1B5500ED0B84 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8DCB03BA1FAD1EF400ED0B84 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8DCB03BC1FAD39B700ED0B84 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
+		8DCB03BE1FB0D93D00ED0B84 /* MunchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunchRequest.swift; sourceTree = "<group>"; };
+		8DCB03C01FB0EE8500ED0B84 /* FoodPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPreference.swift; sourceTree = "<group>"; };
+		8DCB03C21FB0EEBE00ED0B84 /* TimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
+		8DCB03C41FB0EF2D00ED0B84 /* Munch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Munch.swift; sourceTree = "<group>"; };
 		931CAD9263A178B7B5508161 /* Pods_Munch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC616F549867CD14B41A3EE4 /* Pods-Munch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Munch/Pods-Munch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				8DCB03B61FACFEC600ED0B84 /* FoodPreferencesViewController.swift */,
+				8DCB03BC1FAD39B700ED0B84 /* BudgetViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				8DCB03B81FAD1B5500ED0B84 /* User.swift */,
+				8DCB03BE1FB0D93D00ED0B84 /* MunchRequest.swift */,
+				8DCB03C41FB0EF2D00ED0B84 /* Munch.swift */,
+				8DCB03C01FB0EE8500ED0B84 /* FoodPreference.swift */,
+				8DCB03C21FB0EEBE00ED0B84 /* TimePeriod.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,9 +246,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Munch/Pods-Munch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -246,9 +272,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Munch/Pods-Munch-resources.sh",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -261,13 +290,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Munch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -278,9 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DCB03BB1FAD1EF400ED0B84 /* Constants.swift in Sources */,
+				8DCB03C51FB0EF2D00ED0B84 /* Munch.swift in Sources */,
+				8DCB03BD1FAD39B700ED0B84 /* BudgetViewController.swift in Sources */,
 				8D034B4B1FAB74D4009CDB11 /* AppDelegate.swift in Sources */,
 				8DCB03B91FAD1B5500ED0B84 /* User.swift in Sources */,
 				8DCB03B71FACFEC600ED0B84 /* FoodPreferencesViewController.swift in Sources */,
+				8DCB03C31FB0EEBE00ED0B84 /* TimePeriod.swift in Sources */,
+				8DCB03BF1FB0D93D00ED0B84 /* MunchRequest.swift in Sources */,
+				8DCB03C11FB0EE8500ED0B84 /* FoodPreference.swift in Sources */,
 				8D034B531FAB74D4009CDB11 /* Munch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
